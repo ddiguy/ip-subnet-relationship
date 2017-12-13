@@ -129,7 +129,7 @@ except Exception as e:
 
 # Create Trie object
 try:
-    pyt = pytricia.PyTricia()
+    pyt = pytricia.PyTricia(128)
     for i in SN_DDI:
         try:
             pyt.insert(ipaddress.IPv4Network(i), ipaddress.IPv4Network(i))
