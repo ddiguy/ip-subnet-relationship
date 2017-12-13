@@ -121,7 +121,10 @@ except Exception as e:
 try:
     with open(file_dir+args.subnets, 'r') as subfile:
         for lines in subfile:
-            SN_DDI.add(ipaddress.ip_network(lines.strip()))
+            try:
+                SN_DDI.add(ipaddress.ip_network(lines.strip()))
+            except:
+                pass
 except Exception as e:
     print('Unable to add Subnets to set - '+str(e))
     sys.exit()
